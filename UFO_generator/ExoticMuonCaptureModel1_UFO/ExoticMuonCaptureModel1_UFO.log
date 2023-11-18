@@ -1,0 +1,84 @@
+# This file was automatically created by FeynRules 2.3.49
+# Mathematica version: 13.3.1 for Mac OS X x86 (64-bit) (July 24, 2023)
+# Date: Fri 17 Nov 2023 18:25:47
+
+
+# 
+# This is the logfile for the model ExoticMuonCaptureModel1
+
+# Authors: P. Fox
+# Model version: 0.1
+# Checking the Quantum numbers
+   * Electric charge defined.
+# Checking the Lagrangians
+   * All Lagrangians are ok.
+#
+# Particle definitions
+#
+
+   * No particles removed. All particles correspond to GenInt setup.
+
+
+
+# Compulsory PDG codes:
+   * Class SM leptons complete.
+   * Class SM neutrinos complete.
+   * Class SM quarks incomplete. 1, 2, 3, 4, 5, 6 missing.
+   * Class SM gauge bosons incomplete. 21, 23, 24 missing.
+#
+# Parameter definitions
+#
+
+   * All parameters are ok.
+
+
+# Vertices
+   * Calling FeynmanRules for 1 Lagrangians.
+   * Number of classes vertices: 9
+   * Number of flavored vertices: 11
+   * Saved vertices in InterfaceRun[ 1 ].
+   * Checked QNumber conservation.
+      - Quantum number BaryonNumber NOT conserved in the following vertices
+          {mubar, chi2, ppbar, vm}
+          {chi2bar, mu, vmbar, pp}
+      - Quantum number LeptonNumber conserved in all vertices.
+      - Quantum number Q conserved in all vertices.
+      - Quantum number Qp conserved in all vertices.
+   * particles.py written.
+   * parameters.py written.
+#
+# Vertex definitions
+#
+
+   * 11 vertices written.
+   * vertices.py written.
+#
+# Lorentz structure definitions
+#
+
+   * 8 lorentz structures written.
+   * lorentz.py written.
+#
+# Coupling definitions
+#
+
+   * 11 couplings written.
+   * couplings.py written.
+#
+# Coupling order definitions
+#
+
+   * 0 couplings orders written.
+   * coupling_orders.py written.
+#
+# Decay definitions
+#
+
+   * 3 decays written.
+   * decay.py not written
+#
+# CTCoupling definitions
+#
+
+   * 0 CTcouplings written.
+   * CT_couplings.py written.

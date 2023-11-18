@@ -1,0 +1,356 @@
+
+
+M$ModelName = "ExoticMuonCaptureModel1";
+
+M$Information = {Authors -> "P. Fox",
+				Version   -> "0.1",
+                 Institutions -> "Fermilab",
+                 Emails -> "pjfox@fnal.gov",
+                 Date -> "Nov 9, 2023"};
+
+
+
+(* ************************** *)
+(* *****    Indices     ***** *)
+(* ************************** *)
+
+
+IndexRange[Index[Generation]] = Range[3];
+IndexStyle[Generation, f];
+
+
+(* ************************** *)
+(* *** Interaction orders *** *)
+(* ***  (as used by mg5)  *** *)
+(* ************************** *)
+
+M$InteractionOrderHierarchy = {
+  {QED, 1},
+  {QEDp, 1}
+};
+
+
+
+
+(***** Gauge group list ******)
+
+M$GaugeGroups = {
+
+  U1 == {
+        Abelian -> True,
+        GaugeBoson -> A,
+        Charge -> Q,
+        CouplingConstant -> ee},
+		
+  U1p == {
+         Abelian -> True,
+         GaugeBoson -> Ap,
+         Charge -> Qp,
+         CouplingConstant -> gp}
+};
+
+(***** Particle classes list ******)
+
+M$ClassesDescription = {
+
+  F[1] == {
+    ClassName        -> l,
+    ClassMembers     -> {e, mu, ta},
+    Indices          -> {Index[Generation]},
+    FlavorIndex      -> Generation,
+    SelfConjugate    -> False,
+    Mass             -> {Ml, {Me,5.11*^-4}, {MMU,0.10566}, {MTA,1.777}},
+    Width            -> 0,
+    QuantumNumbers   -> {Q -> -1, LeptonNumber -> 1, Qp ->0},
+    PropagatorLabel  -> {"l", "e", "mu", "ta"},
+    PropagatorType   -> Straight,
+    PropagatorArrow  -> Forward,
+    PDG              -> {11, 13, 15},
+    ParticleName     -> {"e-", "mu-", "ta-"},
+    AntiParticleName -> {"e+", "mu+", "ta+"},
+    FullName         -> {"Electron", "Muon", "Tau"} 
+  },
+  
+  F[2] == {
+    ClassName        -> vl,
+    ClassMembers     -> {ve,vm,vt},
+    Indices          -> {Index[Generation]},
+    FlavorIndex      -> Generation,
+    SelfConjugate    -> False,
+    Mass             -> 0,
+    Width            -> 0,
+    QuantumNumbers   -> {LeptonNumber -> 1, Qp ->0},
+    PropagatorLabel  -> {"v", "ve", "vm", "vt"} ,
+    PropagatorType   -> S,
+    PropagatorArrow  -> Forward,
+    PDG              -> {12,14,16},
+    ParticleName     -> {"ve","vm","vt"},
+    AntiParticleName -> {"ve~","vm~","vt~"},
+    FullName         -> {"Electron-neutrino", "Mu-neutrino", "Tau-neutrino"}
+  },
+ 
+ 
+ F[3] == {
+    ClassName        -> chi1,
+    SelfConjugate    -> False,
+    Mass             -> {Mchi1, 0.900},
+    Width            -> {Wchi1, 0},
+	QuantumNumbers   -> {Q -> 0, Qp ->0},
+    PropagatorLabel  -> "chi1",
+    PropagatorType   -> Straight,
+    PropagatorArrow  -> Forward,
+    PDG              -> 999901,
+    ParticleName     -> "chi1",
+    AntiParticleName -> "chi1bar",
+    FullName         -> "Chi1"	
+  },
+  
+  F[4] == {
+     ClassName        -> chi2,
+     SelfConjugate    -> False,
+     Mass             -> {Mchi2, 1.020},
+     Width            -> {Wchi2, 0.001},
+	 QuantumNumbers   -> {Q -> 0, Qp ->0},
+     PropagatorLabel  -> "chi2",
+     PropagatorType   -> Straight,
+     PropagatorArrow  -> Forward,
+     PDG              -> 999902,
+     ParticleName     -> "chi2",
+     AntiParticleName -> "chi2bar",
+     FullName         -> "Chi2"
+  },
+  
+  F[5] == {
+     ClassName        -> pp,
+     SelfConjugate    -> False,
+     Mass             -> {Mp, 0.93827},
+     Width            -> 0,
+     QuantumNumbers   -> {Q -> 1, BaryonNumber -> 1, Qp ->0},
+     PropagatorLabel  -> "p",
+     PropagatorType   -> Straight,
+     PropagatorArrow  -> Forward,
+     PDG              -> 999900,
+     ParticleName     -> "pp",
+     AntiParticleName -> "ppbar",
+     FullName         -> "p"
+  },
+  
+  
+  V[1] == { 
+    ClassName       -> A, 
+    SelfConjugate   -> True,  
+    Mass            -> 0,  
+    Width           -> 0,  
+    ParticleName    -> "a", 
+    PDG             -> 22, 
+    PropagatorLabel -> "a", 
+    PropagatorType  -> W, 
+    PropagatorArrow -> None,
+    FullName        -> "Photon"
+  },
+  V[2] == { 
+    ClassName       -> Ap, 
+    SelfConjugate   -> True,
+    Mass            -> {MAp, 0.020},
+    Width           -> {WAp, 0.001},
+    ParticleName    -> "Ap", 
+    PDG             -> 999903, 
+    PropagatorLabel -> "Ap",
+    PropagatorType  -> Sine,
+    PropagatorArrow -> None,
+    FullName        -> "Ap"
+  }
+
+};
+
+
+
+
+
+(* ************************** *)
+(* *****   Parameters   ***** *)
+(* ************************** *)
+
+
+
+M$Parameters = {
+  aEM == { 
+    ParameterType    -> External, 
+    BlockName        -> SMINPUTS, 
+    OrderBlock       -> 1, 
+    Value            -> 1/137.,
+    InteractionOrder -> {QED,2},
+    Description      -> "EW coupling constant at low scales"
+  },
+  
+  GF == { 
+    ParameterType    -> External, 
+    BlockName        -> SMINPUTS, 
+    OrderBlock       -> 2,
+    Value            -> 0.00001166, (* GeV ^-2 *)
+    InteractionOrder -> {QED,2},
+    Description      -> "G Fermi (in 1/GeV^2)"
+  },
+  
+  
+  epsilon == { 
+    ParameterType    -> External, 
+    BlockName        -> BSMINPUTS, 
+    OrderBlock       -> 1, 
+    Value            -> 0.001,
+    InteractionOrder -> {QEDp,1},
+    Description      -> "epsilon of kinetic mixing"
+  },
+
+  Lambda == { 
+    ParameterType    -> External, 
+    BlockName        -> BSMINPUTS, 
+    OrderBlock       -> 2, 
+    Value            -> 1,
+	InteractionOrder -> {QEDp, -1},
+    Description      -> "scale of higher dim. ops"
+  },
+  
+  cS == { 
+    ParameterType    -> External, 
+    BlockName        -> BSMINPUTS, 
+    OrderBlock       -> 3, 
+    Value            -> 1,
+	InteractionOrder -> {QEDp,1},
+    Description      -> "scalar coefficient"
+  },
+  
+  cPS == { 
+    ParameterType    -> External, 
+    BlockName        -> BSMINPUTS, 
+    OrderBlock       -> 4, 
+    Value            -> 0,
+	InteractionOrder -> {QEDp,1},
+    Description      -> "pseudo-scalar coefficient"
+  },
+  
+  cV == { 
+    ParameterType    -> External, 
+    BlockName        -> BSMINPUTS, 
+    OrderBlock       -> 5, 
+    Value            -> 0,
+	InteractionOrder -> {QEDp,1},
+    Description      -> "vector coefficient"
+  },
+  
+  cAV == { 
+    ParameterType    -> External, 
+    BlockName        -> BSMINPUTS, 
+    OrderBlock       -> 6, 
+    Value            -> 0,
+	InteractionOrder -> {QEDp,1},
+    Description      -> "axial-vector coefficient"
+  },
+  
+  cT == { 
+    ParameterType    -> External, 
+    BlockName        -> BSMINPUTS, 
+    OrderBlock       -> 7, 
+    Value            -> 0,
+	InteractionOrder -> {QEDp,1},
+    Description      -> "tensor coefficient"
+  },
+  
+  tdip == { 
+    ParameterType    -> External, 
+    BlockName        -> BSMINPUTS, 
+    OrderBlock       -> 8, 
+    Value            -> 0,
+	InteractionOrder -> {QEDp,1},
+    Description      -> "chi1-chi2 transition dipole op"
+  },
+  
+  tcon == { 
+    ParameterType    -> External, 
+    BlockName        -> BSMINPUTS, 
+    OrderBlock       -> 9, 
+    Value            -> 1,
+	InteractionOrder -> {QEDp,1},
+    Description      -> "chi1-chi2 transition contact op"
+  },
+  
+  ee == { 
+    ParameterType    -> Internal, 
+    Value            -> Sqrt[4 Pi aEM], 
+    InteractionOrder -> {QED,1}, 
+    TeX              -> e,  
+    Description      -> "Electric coupling constant"
+  },
+  
+  
+  
+  gp == {
+        ParameterType -> Internal,
+		InteractionOrder -> {QEDp, 1},
+        Value -> epsilon*ee,
+        Description -> "Ap gauge coupling"}
+
+};
+
+
+(* ************************** *)
+(* *****   Lagrangian   ***** *)
+(* ************************** *)
+
+(* Kinetic terms for SM gauge fields and U(1)X gauge field Bp *)
+
+LGauge := Block[{mu,nu,ii,aa}, 
+  ExpandIndices[-1/4 FS[A,mu,nu] FS[A,mu,nu] -1/4 FS[Ap,mu,nu] FS[Ap,mu,nu]]];
+
+(* Note that as we redefine LL in presence of light and heavy neutrino mixing, the term  LLbar.Ga[mu].DC[LL, mu] contains all the new mixing dependent charged and neutral current interactions such as N-l-W, N-vl-Z, N-N-Z *)
+
+LFermions := Block[{mu}, 
+  ExpandIndices[I*(
+    lbar.Ga[mu].DC[l, mu] + ppbar.Ga[mu].DC[pp, mu] + chi1bar.Ga[mu].DC[chi1, mu] + chi2bar.Ga[mu].DC[chi2, mu] )]];
+	
+
+
+LSMfourFermi := Block[{temp, mu},
+	temp = ExpandIndices[
+	(4*GF/Sqrt[2]) * vmbar.ProjP[mu].mu * ebar.ProjP[mu].ve
+	];
+	temp + HC[temp]
+
+];
+
+(* e+ e- Ap coupling *)
+
+LApee := Block[{temp, mu},
+	temp = ExpandIndices[gp ebar.Ga[mu].e Ap[mu]];
+	temp
+];
+
+(* Off-diagonal contact operator for chi2 -> chi1 Ap *)
+
+Lchi12contact := Block[{temp,mu},
+	temp = ExpandIndices[tcon * chi2bar.Ga[mu].chi1 Ap[mu]];
+	temp + HC[temp]
+];
+
+(* Dipole term of form c/2 chi1bar sigma_munu chi2 F_munu + h.c.  with c real *)
+Lchi12dipole := Block[{temp1, temp2, mu, nu}, 
+ temp1 = ExpandIndices[I * tdip * (chi2bar . Ga[mu] . Ga[nu] . chi1 ) FS[Ap, mu, nu]];
+ temp2 = ExpandIndices[I * tdip * (chi1bar . Ga[mu] . Ga[nu] . chi2 ) FS[Ap, mu, nu]];
+ temp1 + temp2
+ ];
+ 
+L4fermion := 
+ Block[{temp, Lscalar, Lvector, Ltensor}, 
+  temp = ExpandIndices[cS * ppbar.chi2 mubar.vm + cPS * ppbar.Ga[5].chi2 mubar.Ga[5].vm];
+  Lscalar = temp + HC[temp];
+  temp = ExpandIndices[cV * ppbar.Ga[mu].chi2 mubar.Ga[mu].vm + cAV * ppbar.Ga[mu].Ga[5].chi2 mubar.Ga[mu].Ga[5].vm];
+  Lvector = temp + HC[temp];
+  temp = ExpandIndices[cT*ppbar.Ga[mu].Ga[nu].chi2 mubar.Ga[mu].Ga[nu].vm];
+  Ltensor = temp + HC[temp];
+  (Lscalar + Lvector + Ltensor)/(Lambda*Lambda)
+  ];
+  
+  L = LGauge + LFermions + Lchi12dipole + L4fermion + LSMfourFermi + LApee + Lchi12contact;
+	
+
+
