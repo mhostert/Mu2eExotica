@@ -1,0 +1,43 @@
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+c      written by the UFO converter
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+bsminputs 1 mdl_epsilon
+
+bsminputs 2 mdl_Lambda
+
+bsminputs 3 mdl_cS
+
+bsminputs 4 mdl_cPS
+
+bsminputs 5 mdl_cV
+
+bsminputs 6 mdl_cAV
+
+bsminputs 7 mdl_cT
+
+bsminputs 8 mdl_tdip
+
+bsminputs 9 mdl_tcon
+
+sminputs 1 mdl_aEM
+
+sminputs 2 mdl_GF
+
+mass 11 mdl_Me
+
+mass 13 mdl_MMU
+
+mass 15 mdl_MTA
+
+mass 999901 mdl_Mchi1
+
+mass 999902 mdl_Mchi2
+
+mass 999900 mdl_Mp
+
+mass 999903 mdl_MAp
+
+decay 999902 mdl_Wchi2
+
+decay 999903 mdl_WAp

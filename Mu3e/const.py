@@ -22,6 +22,8 @@ m_proton_in_t = m_proton_in_kg * 1e-3
 # constants for convertion
 MeV_to_GeV = 1e-3
 
+cm_to_mm = 1e1
+
 invm2_to_incm2 = 1e-4
 fb_to_cm2 = 1e-39
 NAvo = 6.02214076 * 1e23
@@ -213,6 +215,11 @@ def get_decay_rate_in_s(G):
 
 def get_decay_rate_in_cm(G):
     return 1.0 / G * invGeV_to_cm
+
+
+def get_decay_rate_in_1e32_years(gamma):
+    s_in_a_year = 365.25 * 24 * 60 * 60
+    return get_decay_rate_in_s(gamma) / s_in_a_year / 1e32
 
 
 # phase space function
