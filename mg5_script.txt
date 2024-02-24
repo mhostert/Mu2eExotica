@@ -1,13 +1,20 @@
 
-    set automatic_html_opening False
-    import model ExoticMuonCaptureModel1
-    generate pp > e+ vm~ ve vm chi1 Ap QEDp<=5
-    output /Users/matheushostert/Repos/Mu2eExotica/MGevents/ProtonDecayModel1
-    launch -n custom_run_9.00e-01_1.02e+00_2.00e-02 /Users/matheushostert/Repos/Mu2eExotica/MGevents/ProtonDecayModel1 
-    0
-    set Mchi1 9.00e-01
-    set Mchi2 1.02e+00
-    set MAp 2.00e-02
-    set nevents 1000"
-    0
-    
+        set automatic_html_opening False
+        import model ExoticMuonCaptureModel1
+        generate mu- pp > vm chi1 e+ e- QEDp<=5
+        output /Users/matheushostert/Repos/Mu2eExotica/MGevents/MuonCaptureModel1
+        launch -n custom_run_8.80e-01_1.03e+00_4.50e-02 /Users/matheushostert/Repos/Mu2eExotica/MGevents/MuonCaptureModel1 
+        0
+        set ptl -1
+        set etal -1
+        set etalmin -1
+        set drll -1
+        set nevents 50000
+        set ebeam1 0.00001
+        set ebeam2 0.00001
+        set Mchi1 8.80e-01
+        set Mchi2 1.03e+00
+        set MAp 4.50e-02
+        set nevents 10000"
+        0
+        

@@ -18,8 +18,8 @@
   External Params
   ---------------------------------
   
- mdl_epsilon =    1.0000000000000000E-003
- mdl_Lambda =    1.0000000000000000     
+ mdl_epsilon =    1.0000000000000000E-002
+ mdl_Lambda =    200000.00000000000     
  mdl_cS =    1.0000000000000000     
  mdl_cPS =    0.0000000000000000     
  mdl_cV =    0.0000000000000000     
@@ -37,16 +37,16 @@
  mdl_Mp =   0.93827000000000005     
  mdl_MAp =    2.0000000000000000E-002
  mdl_Wchi2 =    1.0000000000000000E-003
- mdl_WAp =    1.0000000000000000E-003
+ mdl_WAp =   0.10000000000000001     
   Internal Params
   ---------------------------------
   
  mdl_sqrt__aEM =    8.5435765344497261E-002
  mdl_ee =   0.30286190257982837     
- mdl_gp =    3.0286190257982839E-004
+ mdl_gp =    3.0286190257982838E-003
  mdl_complexi =                (0.0000000000000000,1.0000000000000000)
  mdl_sqrt__2 =    1.4142135623730951     
- mdl_Lambda__exp__2 =    1.0000000000000000     
+ mdl_Lambda__exp__2 =    40000000000.000000     
  aS =    1.3799843265950287     
  G =    4.1642999999999999     
   Internal Params evaluated point by point
@@ -58,7 +58,7 @@
          GC_3 =   0.00000E+00   0.32979E-04
          GC_5 =   0.00000E+00   0.00000E+00
          GC_6 =   0.00000E+00   0.00000E+00
-         GC_7 =   0.00000E+00   0.10000E+01
+         GC_7 =   0.00000E+00   0.25000E-10
          GC_8 =   0.00000E+00   0.00000E+00
          GC_9 =   0.00000E+00   0.00000E+00
         GC_10 =   0.00000E+00   0.10000E+01
@@ -121,7 +121,7 @@ Using random seed offsets     1 :      1
  ********************************************
  
   Particle       2       3       4       5       6       7
-      Et >     0.0     0.0     0.0     0.0     0.0     0.0
+      Et >    -1.0     0.0     0.0     0.0     0.0     0.0
        E >     0.0     0.0     0.0     0.0     0.0     0.0
      Eta <    -1.0    -1.0    -1.0    -1.0    -1.0    -1.0
    xqcut:      0.0     0.0     0.0     0.0     0.0     0.0
@@ -143,25 +143,25 @@ xqcutij # 6>     0.0     0.0     0.0     0.0     0.0     0.0
  Excluding BW           -3           1
  alpha_s for scale   0.93827000000000005       is                        NaN
  RESET CUMULATIVE VARIABLE
- Iteration  1   Mean: 0.6527E-42 Abs mean: 0.6527E-42   Fluctuation:  0.967E-43   0.655E-40    38.5%
-  1    0.6527E-42 0.6527E-42 +- 0.9673E-43      4.69
- Writing out events   3.3902520532436432E-046   4.6860894166068698     
+ Iteration  1   Mean: 0.4080E-63 Abs mean: 0.4080E-63   Fluctuation:  0.605E-64   0.409E-61    38.5%
+  1    0.4080E-63 0.4080E-63 +- 0.6045E-64      4.69
+ Writing out events   2.1189075332772753E-067   4.6860894166068698     
  Relative summed weights:
   0.1000E+01  0.0000E+00
  Relative number of events:
   0.1000E+01  0.0000E+00
  Events:
         1009           0
- Iteration  2   Mean: 0.6564E-42 Abs mean: 0.6564E-42   Fluctuation:  0.110E-42   0.121E-39    23.7%
-  2    0.6564E-42 0.6564E-42 +- 0.1102E-42      7.51
+ Iteration  2   Mean: 0.4102E-63 Abs mean: 0.4102E-63   Fluctuation:  0.689E-64   0.756E-61    23.7%
+  2    0.4102E-63 0.4102E-63 +- 0.6889E-64      7.51
  Relative summed weights:
   0.1000E+01  0.0000E+00
  Relative number of events:
   0.1000E+01  0.0000E+00
  Events:
         2000           0
- Iteration  3   Mean: 0.7206E-42 Abs mean: 0.7206E-42   Fluctuation:  0.912E-43   0.287E-39    15.3%
-  3    0.7206E-42 0.7206E-42 +- 0.9117E-43      8.00
+ Iteration  3   Mean: 0.4504E-63 Abs mean: 0.4504E-63   Fluctuation:  0.570E-64   0.180E-60    15.3%
+  3    0.4504E-63 0.4504E-63 +- 0.5698E-64      8.00
  Relative summed weights:
   0.1000E+01  0.0000E+00
  Relative number of events:
@@ -169,26 +169,26 @@ xqcutij # 6>     0.0     0.0     0.0     0.0     0.0     0.0
  Events:
         4000           0
  Accuracy:    0.034   0.100   0.083   0.166
- Finished due to accuracy    3.4063202179910060E-002  0.10000000000000001     
+ Finished due to accuracy    3.4063202180107263E-002  0.10000000000000001     
 
  -------------------------------------------------------------------------------
- Accumulated results:   Integral =  0.6838E-42
-                        Std dev  =  0.5745E-43
-                       Cross sec =  0.6838E-42
+ Accumulated results:   Integral =  0.0000E+00
+                        Std dev  =  0.0000E+00
+                       Cross sec =  0.0000E+00
              Chi**2 per DoF.     =      0.1665
  -------------------------------------------------------------------------------
  Found          689  events.
  Wrote           10  events.
- Actual xsec    6.8320283912448778E-043
- Correct abs xsec    6.8320283912448778E-043
- Event xsec    6.8320283912448778E-043
+ Actual xsec    4.2700177445287870E-064
+ Correct abs xsec    4.2700177445287870E-064
+ Event xsec    4.2700177445287857E-064
  Events wgts > 1:            0
  % Cross section > 1:    0.0000000000000000        0.0000000000000000     
 -------------------------------------------------
 ---------------------------
- Results Last   3 iters: Integral =   0.6832E-42
-                     Abs integral =   0.6832E-42
-                          Std dev =   0.5704E-43
+ Results Last   3 iters: Integral =   0.4270E-63
+                     Abs integral =   0.4270E-63
+                          Std dev =   0.3565E-64
                   Chi**2 per DoF. =      0.1636
 -------------------------------------------------
 ---------------------------
@@ -201,5 +201,5 @@ input_app.txt
 results.dat
 run1_app.log
 --------------------- Multi run with 2 jobs. ---------------------
-job a0 : 7.1833e-43 7.1833e-43 +- 9.2157e-45 942.0
-job b0 : 7.1487e-43 7.1487e-43 +- 9.4376e-45 779.0
+job a0 : 4.4896e-64 4.4896e-64 +- 5.7598e-66 942.0
+job b0 : 4.468e-64 4.468e-64 +- 5.8985e-66 779.0

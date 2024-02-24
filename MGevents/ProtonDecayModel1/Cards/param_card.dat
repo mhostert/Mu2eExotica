@@ -5,8 +5,8 @@
 ## INFORMATION FOR BSMINPUTS
 ###################################
 BLOCK BSMINPUTS # 
-      1 1.000000e-03 # epsilon
-      2 1.000000e+00 # lambda
+      1 1.000000e-02 # epsilon
+      2 2.000000e+05 # lambda
       3 1.000000e+00 # cs
       4 0.000000e+00 # cps
       5 0.000000e+00 # cv
@@ -39,7 +39,7 @@ BLOCK SMINPUTS #
 ## INFORMATION FOR DECAY
 ###################################
 DECAY 999902 1.000000e-03 # wchi2
-DECAY 999903 1.000000e-03 # wap
+DECAY 999903 1.000000e-01 # wap
 DECAY 11 0.000000e+00 # e- : 0.0
 DECAY 12 0.000000e+00 # ve : 0.0
 DECAY 13 0.000000e+00 # mu- : 0.0

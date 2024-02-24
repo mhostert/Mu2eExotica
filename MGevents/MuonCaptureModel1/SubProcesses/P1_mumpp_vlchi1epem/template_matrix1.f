@@ -215,11 +215,11 @@ C     Needed for v4 models
       DATA DUM0, DUM1/(0d0, 0d0), (1d0, 0d0)/
 
       double precision fk_ZERO 
-      double precision fk_mdl_WAp 
       double precision fk_mdl_Wchi2 
+      double precision fk_mdl_WAp 
       save fk_ZERO 
-      save fk_mdl_WAp 
       save fk_mdl_Wchi2 
+      save fk_mdl_WAp 
 
       logical first
       data first /.true./

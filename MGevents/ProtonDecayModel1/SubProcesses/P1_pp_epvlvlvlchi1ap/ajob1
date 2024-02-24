@@ -40,7 +40,7 @@ j=G1.02a0
      fi
      # create the input file
          echo "    5000       9       3" >& input_sg.txt
-         echo "    -8.782201405152224e+44" >> input_sg.txt
+         echo "    -1.405152224824356e+66" >> input_sg.txt
      if [[ ! -e ftn25 ]]; then
          echo "2" >> input_sg.txt   # grid refinement
          echo "1" >> input_sg.txt   # suppress amplitude

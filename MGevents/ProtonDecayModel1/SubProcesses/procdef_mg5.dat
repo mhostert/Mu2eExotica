@@ -18,7 +18,7 @@
 # Begin PROCESS # This is TAG. Do not modify this line
 pp > e+ vm~ ve vm chi1 Ap           #Process
 # Be carefull the coupling are here in MG5 convention
-QEDp<=5
+QEDp=5
           
 end_coup           # End the couplings input
 

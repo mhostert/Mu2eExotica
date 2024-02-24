@@ -34,8 +34,8 @@
 #*********************************************************************
   1	= lpp1 ! beam 1 type 
   1	= lpp2 ! beam 2 type
-  6500.0	= ebeam1 ! beam 1 total energy in GeV
-  6500.0	= ebeam2 ! beam 2 total energy in GeV
+  0.0	= ebeam1 ! beam 1 total energy in GeV
+  0.0	= ebeam2 ! beam 2 total energy in GeV
 # To see polarised beam options: type "update beam_pol"
 
 #*********************************************************************
@@ -101,7 +101,7 @@
 #*********************************************************************
 # Minimum and maximum pt's (for max, -1 means no cut)                *
 #*********************************************************************
-  0.0	= ptl ! minimum pt for the charged leptons 
+  -1.0	= ptl ! minimum pt for the charged leptons 
   0.0	= misset ! minimum missing Et (sum of neutrino's momenta)
   -1.0	= ptlmax ! maximum pt for the charged leptons
   -1.0	= missetmax ! maximum missing Et (sum of neutrino's momenta)
@@ -114,7 +114,7 @@
 # Maximum and minimum absolute rapidity (for max, -1 means no cut)   *
 #*********************************************************************
   -1.0	= etal ! max rap for the charged leptons 
-  0.0	= etalmin ! main rap for the charged leptons
+  -1.0	= etalmin ! main rap for the charged leptons
   {}	= eta_min_pdg ! rap cut for other particles (use pdg code). Applied on particle and anti-particle
   {}	= eta_max_pdg ! rap cut for other particles (syntax e.g. {6: 2.5, 23: 5})
 #*********************************************************************
@@ -154,3 +154,7 @@
 #
   systematics	= systematics_program ! none, systematics [python], SysCalc [depreceted, C++]
   ['--mur=0.5,1,2', '--muf=0.5,1,2', '--pdf=errorset']	= systematics_arguments ! see: https://cp3.irmp.ucl.ac.be/projects/madgraph/wiki/Systematics#Systematicspythonmodule
+#********************************************************************* 
+#  Additional hidden parameters
+#*********************************************************************
+  -1.0	= drll # hidden_parameter

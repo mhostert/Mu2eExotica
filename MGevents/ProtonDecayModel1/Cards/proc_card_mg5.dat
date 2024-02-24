@@ -39,6 +39,6 @@ define l+ = e+ mu+
 define l- = e- mu-
 define vl = ve vm vt
 define vl~ = ve~ vm~ vt~
-generate pp > e+ vm~ ve vm chi1 Ap QEDp<=5
+generate pp > e+ vm~ ve vm chi1 Ap QEDp=5
 output /Users/matheushostert/Repos/Mu2eExotica/MGevents/ProtonDecayMod\
 el1

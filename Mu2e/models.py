@@ -161,7 +161,7 @@ class MuonCaptureModelI:
         # Roughly....
         ratio = (
             self.Gmup**2
-            / (4 * const.Gf / np.sqrt(2)) ** 2
+            / (const.Gf / np.sqrt(2)) ** 2
             * np.sqrt(1 - self.m2**2 / (const.m_mu + const.m_proton) ** 2)
         )
         return ratio

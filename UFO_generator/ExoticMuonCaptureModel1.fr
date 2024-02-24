@@ -315,7 +315,6 @@ LSMfourFermi := Block[{temp, mu},
 	(4*GF/Sqrt[2]) * vmbar.ProjP[mu].mu * ebar.ProjP[mu].ve
 	];
 	temp + HC[temp]
-
 ];
 
 (* e+ e- Ap coupling *)

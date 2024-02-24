@@ -75,13 +75,12 @@ define l+ = e+ mu+
 define l- = e- mu-
 define vl = ve vm vt
 define vl~ = ve~ vm~ vt~
-generate pp > e+ vm~ ve vm chi1 Ap QEDp<=5
+generate pp > e+ vm~ ve vm chi1 Ap QEDp=5
 output /Users/matheushostert/Repos/Mu2eExotica/MGevents/ProtonDecayMod\
 el1
 ]]>
 </MG5ProcCard>
 <MGProcCard>
-<![CDATA[
 #*********************************************************************
 #                        MadGraph/MadEvent                           *
 #                   http://madgraph.hep.uiuc.edu                     *
@@ -102,7 +101,7 @@ el1
 # Begin PROCESS # This is TAG. Do not modify this line
 pp > e+ vm~ ve vm chi1 Ap           #Process
 # Be carefull the coupling are here in MG5 convention
-QEDp<=5
+QEDp=5
           
 end_coup           # End the couplings input
 
@@ -120,7 +119,6 @@ ExoticMuonCaptureModel1
 # Begin MULTIPARTICLES # This is TAG. Do not modify this line
 
 # End  MULTIPARTICLES # This is TAG. Do not modify this line
-]]>
 </MGProcCard>
 <MGRunCard>
 <![CDATA[
@@ -160,8 +158,8 @@ ExoticMuonCaptureModel1
 #*********************************************************************
   1	= lpp1 ! beam 1 type 
   1	= lpp2 ! beam 2 type
-  6500.0	= ebeam1 ! beam 1 total energy in GeV
-  6500.0	= ebeam2 ! beam 2 total energy in GeV
+  0.0	= ebeam1 ! beam 1 total energy in GeV
+  0.0	= ebeam2 ! beam 2 total energy in GeV
 # To see polarised beam options: type "update beam_pol"
 
 #*********************************************************************
@@ -227,7 +225,7 @@ ExoticMuonCaptureModel1
 #*********************************************************************
 # Minimum and maximum pt's (for max, -1 means no cut)                *
 #*********************************************************************
-  0.0	= ptl ! minimum pt for the charged leptons 
+  -1.0	= ptl ! minimum pt for the charged leptons 
   0.0	= misset ! minimum missing Et (sum of neutrino's momenta)
   -1.0	= ptlmax ! maximum pt for the charged leptons
   -1.0	= missetmax ! maximum missing Et (sum of neutrino's momenta)
@@ -240,7 +238,7 @@ ExoticMuonCaptureModel1
 # Maximum and minimum absolute rapidity (for max, -1 means no cut)   *
 #*********************************************************************
   -1.0	= etal ! max rap for the charged leptons 
-  0.0	= etalmin ! main rap for the charged leptons
+  -1.0	= etalmin ! main rap for the charged leptons
   {}	= eta_min_pdg ! rap cut for other particles (use pdg code). Applied on particle and anti-particle
   {}	= eta_max_pdg ! rap cut for other particles (syntax e.g. {6: 2.5, 23: 5})
 #*********************************************************************
@@ -280,6 +278,10 @@ ExoticMuonCaptureModel1
 #
   systematics	= systematics_program ! none, systematics [python], SysCalc [depreceted, C++]
   ['--mur=0.5,1,2', '--muf=0.5,1,2', '--pdf=errorset']	= systematics_arguments ! see: https://cp3.irmp.ucl.ac.be/projects/madgraph/wiki/Systematics#Systematicspythonmodule
+#********************************************************************* 
+#  Additional hidden parameters
+#*********************************************************************
+  -1.0	= drll # hidden_parameter
 ]]>
 </MGRunCard>
 <slha>
@@ -290,8 +292,8 @@ ExoticMuonCaptureModel1
 ## INFORMATION FOR BSMINPUTS
 ###################################
 BLOCK BSMINPUTS # 
-      1 1.000000e-03 # epsilon
-      2 1.000000e+00 # lambda
+      1 1.000000e-02 # epsilon
+      2 2.000000e+05 # lambda
       3 1.000000e+00 # cs
       4 0.000000e+00 # cps
       5 0.000000e+00 # cv
@@ -324,7 +326,7 @@ BLOCK SMINPUTS #
 ## INFORMATION FOR DECAY
 ###################################
 DECAY 999902 1.000000e-03 # wchi2
-DECAY 999903 1.000000e-03 # wap
+DECAY 999903 1.000000e-01 # wap
 DECAY 11 0.000000e+00 # e- : 0.0
 DECAY 12 0.000000e+00 # ve : 0.0
 DECAY 13 0.000000e+00 # mu- : 0.0
@@ -369,7 +371,7 @@ BLOCK QNUMBERS 999903 #  ap
 </slha>
 <MGGenerationInfo>
 #  Number of Events        :       1000
-#  Integrated weight (pb)  :       7.166e-43
+#  Integrated weight (pb)  :       4.4788e-64
 </MGGenerationInfo>
 </header>
 </LesHouchesEvents>
