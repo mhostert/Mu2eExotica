@@ -8,7 +8,7 @@
 #*                *                       *                 *
 #*                                                          *
 #*                                                          *
-#*         VERSION 3.5.0                 2023-05-12         *
+#*         VERSION 3.5.3                 2023-12-23         *
 #*                                                          *
 #*    The MadGraph5_aMC@NLO Development Team - Find us at   *
 #*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
@@ -40,5 +40,4 @@ define l- = e- mu-
 define vl = ve vm vt
 define vl~ = ve~ vm~ vt~
 generate mu- pp > vm chi1 e+ e- QEDp<=5
-output /Users/matheushostert/Repos/Mu2eExotica/MGevents/MuonCaptureMod\
-el1
+output /Users/mhostert/Repos/Mu2eExotica/MGevents/MuonCaptureModel1

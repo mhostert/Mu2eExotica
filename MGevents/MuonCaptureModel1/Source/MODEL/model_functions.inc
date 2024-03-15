@@ -14,5 +14,5 @@ ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
       DOUBLE COMPLEX B0F
       DOUBLE COMPLEX SQRT_TRAJECTORY
       DOUBLE COMPLEX LOG_TRAJECTORY
-
+      DOUBLE COMPLEX COT
 

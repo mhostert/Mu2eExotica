@@ -107,7 +107,6 @@ Running Configuration Number:    1
  T-channel found:            0
  Setting BW          -1           1   4.4999999999999998E-002
  Setting BW          -2           2   1.0300000000000000     
-Setting grid   3    0.71225E+00   1
 Using random seed offsets     1 :      1
   with seed                   24
  Ranmar initialization seeds       31059        9398
@@ -136,53 +135,53 @@ xqcutij # 5>     0.0     0.0     0.0     0.0
  No cut BW           -2           2
  alpha_s for scale    1.0439300000000000       is                        NaN
  RESET CUMULATIVE VARIABLE
- Iteration  1   Mean: 0.3325E+07 Abs mean: 0.3325E+07   Fluctuation:  0.871E+06   0.597E+09   100.0%
-  1    0.3325E+07 0.3325E+07 +- 0.8708E+06      8.28
- Writing out events   665.01811958787357        8.2814805066948782     
+ Iteration  1   Mean: 0.3227E+07 Abs mean: 0.3227E+07   Fluctuation:  0.554E+05   0.200E+08   100.0%
+  1    0.3227E+07 0.3227E+07 +- 0.5539E+05      0.54
+ Writing out events   645.38364418914296       0.54280494486080155     
  Relative summed weights:
   0.1000E+01  0.0000E+00
  Relative number of events:
   0.1000E+01  0.0000E+00
  Events:
         1009           0
- Iteration  2   Mean: 0.3235E+07 Abs mean: 0.3235E+07   Fluctuation:  0.282E+06   0.244E+09   100.0%
-  2    0.3235E+07 0.3235E+07 +- 0.2820E+06      3.90
+ Iteration  2   Mean: 0.3237E+07 Abs mean: 0.3237E+07   Fluctuation:  0.437E+05   0.229E+08   100.0%
+  2    0.3237E+07 0.3237E+07 +- 0.4371E+05      0.60
  Relative summed weights:
   0.1000E+01  0.0000E+00
  Relative number of events:
   0.1000E+01  0.0000E+00
  Events:
         2000           0
- Iteration  3   Mean: 0.3072E+07 Abs mean: 0.3072E+07   Fluctuation:  0.920E+05   0.768E+08   100.0%
-  3    0.3072E+07 0.3072E+07 +- 0.9198E+05      1.89
+ Iteration  3   Mean: 0.3197E+07 Abs mean: 0.3197E+07   Fluctuation:  0.255E+05   0.139E+08   100.0%
+  3    0.3197E+07 0.3197E+07 +- 0.2554E+05      0.51
  Relative summed weights:
   0.1000E+01  0.0000E+00
  Relative number of events:
   0.1000E+01  0.0000E+00
  Events:
         4000           0
- Accuracy:    0.013   0.100   0.028   0.206
- Finished due to accuracy    1.2765538799305533E-002  0.10000000000000001     
+ Accuracy:    0.004   0.100   0.006   0.381
+ Finished due to accuracy    3.9419746358425704E-003  0.10000000000000001     
 
  -------------------------------------------------------------------------------
- Accumulated results:   Integral =  0.3092E+07
-                        Std dev  =  0.8705E+05
-                       Cross sec =  0.3092E+07
-             Chi**2 per DoF.     =      0.2056
+ Accumulated results:   Integral =  0.3210E+07
+                        Std dev  =  0.2049E+05
+                       Cross sec =  0.3210E+07
+             Chi**2 per DoF.     =      0.3813
  -------------------------------------------------------------------------------
- Found          364  events.
- Wrote          261  events.
- Actual xsec    3092101.3502974194     
- Correct abs xsec    3092101.3502974194     
- Event xsec    3092101.3502974082     
- Events wgts > 1:           10
- % Cross section > 1:    26225.130762402823       0.84813296174397412     
+ Found          369  events.
+ Wrote          366  events.
+ Actual xsec    3209805.2297758060     
+ Correct abs xsec    3209805.2297758060     
+ Event xsec    3209805.2297757827     
+ Events wgts > 1:            0
+ % Cross section > 1:    0.0000000000000000        0.0000000000000000     
 -------------------------------------------------
 ---------------------------
- Results Last   3 iters: Integral =   0.3092E+07
-                     Abs integral =   0.3092E+07
-                          Std dev =   0.8705E+05
-                  Chi**2 per DoF. =      0.1881
+ Results Last   3 iters: Integral =   0.3210E+07
+                     Abs integral =   0.3210E+07
+                          Std dev =   0.2049E+05
+                  Chi**2 per DoF. =      0.3786
 -------------------------------------------------
 ---------------------------
  Status  0.10000000000000001                4           5
@@ -194,15 +193,15 @@ input_app.txt
 results.dat
 run1_app.log
 --------------------- Multi run with 12 jobs. ---------------------
-job a0 : 3167700.0 3167700.0 +- 38850.0 1485.0
-job b0 : 3144900.0 3144900.0 +- 39857.0 1558.0
-job c0 : 3180400.0 3180400.0 +- 39088.0 1512.0
-job d0 : 3268800.0 3268800.0 +- 39718.0 1487.0
-job e0 : 3153900.0 3153900.0 +- 98451.0 1426.0
-job f0 : 3121000.0 3121000.0 +- 40576.0 1469.0
-job g0 : 3219000.0 3219000.0 +- 103880.0 1534.0
-job h0 : 3231700.0 3231700.0 +- 46756.0 1428.0
-job i0 : 3163700.0 3163700.0 +- 38899.0 1575.0
-job j0 : 3170700.0 3170700.0 +- 55054.0 1543.0
-job k0 : 3161200.0 3161200.0 +- 38662.0 1442.0
-job l0 : 3110900.0 3110900.0 +- 38571.0 1525.0
+job a0 : 3170600.0 3170600.0 +- 12122.0 1102.0
+job b0 : 3177500.0 3177500.0 +- 11955.0 1085.0
+job c0 : 3177200.0 3177200.0 +- 16046.0 1125.0
+job d0 : 3181900.0 3181900.0 +- 12078.0 1086.0
+job e0 : 3182900.0 3182900.0 +- 12289.0 1089.0
+job f0 : 3176400.0 3176400.0 +- 15572.0 1085.0
+job g0 : 3183800.0 3183800.0 +- 11964.0 1127.0
+job h0 : 3158600.0 3158600.0 +- 13166.0 1113.0
+job i0 : 3175100.0 3175100.0 +- 13849.0 1073.0
+job j0 : 3176200.0 3176200.0 +- 13310.0 1086.0
+job k0 : 3153700.0 3153700.0 +- 11922.0 1108.0
+job l0 : 3176100.0 3176100.0 +- 14371.0 1079.0

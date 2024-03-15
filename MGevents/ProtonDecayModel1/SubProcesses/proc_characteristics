@@ -3,8 +3,8 @@
  loop_induced = False 
  has_isr = False 
  has_fsr = False 
- nb_channel = 1 
- nexternal = 7 
+ nb_channel = 2 
+ nexternal = 8 
  ninitial = 1 
  grouped_matrix = True 
  has_loops = False 

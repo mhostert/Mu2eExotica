@@ -6,6 +6,7 @@ ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
       WRITE(*,*)  ' ---------------------------------'
       WRITE(*,*)  ' '
       WRITE(*,2) 'GC_3 = ', GC_3
+      WRITE(*,2) 'GC_4 = ', GC_4
       WRITE(*,2) 'GC_5 = ', GC_5
       WRITE(*,2) 'GC_6 = ', GC_6
       WRITE(*,2) 'GC_7 = ', GC_7

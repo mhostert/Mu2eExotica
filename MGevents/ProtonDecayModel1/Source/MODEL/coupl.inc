@@ -28,8 +28,9 @@ ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
       COMMON/WIDTHS/ MDL_WAP,MDL_WCHI2
 
 
-      DOUBLE COMPLEX GC_3, GC_5, GC_6, GC_7, GC_8, GC_9, GC_10, GC_11
-
-      COMMON/COUPLINGS/ GC_3, GC_5, GC_6, GC_7, GC_8, GC_9, GC_10,
+      DOUBLE COMPLEX GC_3, GC_4, GC_5, GC_6, GC_7, GC_8, GC_9, GC_10,
      $  GC_11
+
+      COMMON/COUPLINGS/ GC_3, GC_4, GC_5, GC_6, GC_7, GC_8, GC_9,
+     $  GC_10, GC_11
 

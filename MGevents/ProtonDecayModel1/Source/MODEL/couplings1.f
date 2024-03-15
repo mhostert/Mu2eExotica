@@ -13,6 +13,7 @@ ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
       INCLUDE 'input.inc'
       INCLUDE 'coupl.inc'
       GC_3 = 2.000000D+00*MDL_COMPLEXI*MDL_GF*MDL_SQRT__2
+      GC_4 = MDL_COMPLEXI*MDL_GP
       GC_5 = (MDL_CAV*MDL_COMPLEXI)/MDL_LAMBDA__EXP__2
       GC_6 = (MDL_CPS*MDL_COMPLEXI)/MDL_LAMBDA__EXP__2
       GC_7 = (MDL_CS*MDL_COMPLEXI)/MDL_LAMBDA__EXP__2

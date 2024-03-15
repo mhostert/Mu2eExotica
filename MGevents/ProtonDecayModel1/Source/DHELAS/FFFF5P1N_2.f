@@ -11,12 +11,12 @@ C
       COMPLEX*16 F2(6)
       COMPLEX*16 F3(*)
       COMPLEX*16 F4(*)
-      COMPLEX*16 TMP5
-      TMP5 = (F4(3)*F3(3)+F4(4)*F3(4)+F4(5)*F3(5)+F4(6)*F3(6))
-      F2(3)= COUP*(-CI )* TMP5*F1(3)
-      F2(4)= COUP*(-CI )* TMP5*F1(4)
-      F2(5)= COUP*(-CI )* TMP5*F1(5)
-      F2(6)= COUP*(-CI )* TMP5*F1(6)
+      COMPLEX*16 TMP6
+      TMP6 = (F4(3)*F3(3)+F4(4)*F3(4)+F4(5)*F3(5)+F4(6)*F3(6))
+      F2(3)= COUP*(-CI )* TMP6*F1(3)
+      F2(4)= COUP*(-CI )* TMP6*F1(4)
+      F2(5)= COUP*(-CI )* TMP6*F1(5)
+      F2(6)= COUP*(-CI )* TMP6*F1(6)
       END
 
 

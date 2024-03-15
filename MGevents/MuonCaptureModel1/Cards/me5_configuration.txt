@@ -234,7 +234,7 @@
 # pineappl = pineappl
 
 
-mg5_path = /Users/matheushostert/Development/MG5_aMC_v3_5_0 
+mg5_path = /Users/mhostert/Development/MG5_aMC_v3_5_3 
 
 # MG5 MAIN DIRECTORY
-mg5_path = /Users/matheushostert/Development/MG5_aMC_v3_5_0
+mg5_path = /Users/mhostert/Development/MG5_aMC_v3_5_3

@@ -16,7 +16,7 @@
 # Process(es) requested : mg2 input                                  *
 #*********************************************************************
 # Begin PROCESS # This is TAG. Do not modify this line
-pp > e+ vm~ ve vm chi1 Ap           #Process
+pp > e+ vm~ ve vm chi1 e+ e-           #Process
 # Be carefull the coupling are here in MG5 convention
 QEDp=5
           

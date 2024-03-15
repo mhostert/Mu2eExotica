@@ -10,7 +10,7 @@
 *                   *        * *        *                  *
 *                 *                       *                *
 *                                                          *
-*         VERSION 3.5.0                 2023-05-12         *
+*         VERSION 3.5.3                 2023-12-23         *
 *                                                          *
 *    The MadGraph5_aMC@NLO Development Team - Find us at   *
 *              http://madgraph.phys.ucl.ac.be/             *
@@ -23,13 +23,20 @@
 *    Type 'tutorial MadLoop' to learn how MadLoop works    *
 *                                                          *
 ************************************************************
-load MG5 configuration from ../../Development/MG5_aMC_v3_5_0/input/mg5_configuration.txt 
-set fastjet to fastjet-config
+load MG5 configuration from ../../Development/MG5_aMC_v3_5_3/input/mg5_configuration.txt 
+fastjet-config does not seem to correspond to a valid fastjet-config executable (v3+). We will use fjcore instead.
+ Please set the 'fastjet'variable to the full (absolute) /PATH/TO/fastjet-config (including fastjet-config).
+ MG5_aMC> set fastjet /PATH/TO/fastjet-config
+
 eMELA-config does not seem to correspond to a valid eMELA-config executable.
  Please set the 'fastjet'variable to the full (absolute) /PATH/TO/eMELA-config (including eMELA-config).
  MG5_aMC> set eMELA /PATH/TO/eMELA-config
 
-set lhapdf to lhapdf-config
+lhapdf-config does not seem to correspond to a valid lhapdf-config executable. 
+Please set the 'lhapdf' variable to the (absolute) /PATH/TO/lhapdf-config (including lhapdf-config).
+Note that you can still compile and run aMC@NLO with the built-in PDFs
+ MG5_aMC> set lhapdf /PATH/TO/lhapdf-config
+
 None does not seem to correspond to a valid lhapdf-config executable. 
 Please set the 'lhapdf' variable to the (absolute) /PATH/TO/lhapdf-config (including lhapdf-config).
 Note that you can still compile and run aMC@NLO with the built-in PDFs
@@ -37,7 +44,7 @@ Note that you can still compile and run aMC@NLO with the built-in PDFs
 
 Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
 [1;34mWARNING: launching caffeinate to prevent idle sleep when MG5aMC is running. Run './bin/mg5_aMC -s' to prevent this. [0m
-import /Users/matheushostert/Repos/Mu2eExotica/mg5_script.txt
+import /Users/mhostert/Repos/Mu2eExotica/mg5_script.txt
 The import format was not given, so we guess it as command
 set automatic_html_opening False
 This option will be the default in any output that you are going to create in this session.
@@ -51,41 +58,42 @@ Defined multiparticle l- = e- mu-
 Defined multiparticle vl = ve vm vt
 Defined multiparticle vl~ = ve~ vm~ vt~
 Defined multiparticle all = a ve vm vt ve~ vm~ vt~ ap e- mu- ta- chi1 chi2 pp e+ mu+ ta+ chi1bar chi2bar ppbar
-generate mu- pp > vm chi1 e+ e- QEDp<=5
-INFO: Trying process: mu- pp > vm chi1 e+ e- QEDp<=5 @1  
-INFO: Process has 1 diagrams 
-1 processes with 1 diagrams generated in 0.002 s
-Total: 1 processes with 1 diagrams
-output /Users/matheushostert/Repos/Mu2eExotica/MGevents/MuonCaptureModel1
-INFO: directory /Users/matheushostert/Repos/Mu2eExotica/MGevents/MuonCaptureModel1 already exists.
+generate pp > e+ vm~ ve vm chi1 e+ e- QEDp=5
+[1;34mInterpreting 'QEDp=5' as 'QEDp<=5'[0m
+INFO: Trying process: pp > e+ vm~ ve vm chi1 e+ e- QEDp<=5 @1  
+INFO: Process has 2 diagrams 
+1 processes with 2 diagrams generated in 0.003 s
+Total: 1 processes with 2 diagrams
+output /Users/mhostert/Repos/Mu2eExotica/MGevents/ProtonDecayModel1
+INFO: directory /Users/mhostert/Repos/Mu2eExotica/MGevents/ProtonDecayModel1 already exists.
 If you continue this directory will be deleted and replaced.
 Do you want to continue? [[4my[0m, n]
-[1;34mfound line : launch -n custom_run_8.80e-01_1.03e+00_4.50e-02 /Users/matheushostert/Repos/Mu2eExotica/MGevents/MuonCaptureModel1[0m
+[1;34mfound line : launch -n custom_run_9.37e-01_1.02e+00_2.00e-02 /Users/mhostert/Repos/Mu2eExotica/MGevents/ProtonDecayModel1[0m
 [1;34mThis answer is not valid for current question. Keep it for next question and use here default: y[0m
-INFO: initialize a new directory: MuonCaptureModel1 
-INFO: remove old information in MuonCaptureModel1 
+INFO: initialize a new directory: ProtonDecayModel1 
+INFO: remove old information in ProtonDecayModel1 
 INFO: Organizing processes into subprocess groups 
-INFO: Generating Helas calls for process: mu- pp > vm chi1 e+ e- QEDp<=5 @1 
-INFO: Processing color information for process: mu- pp > vm chi1 e+ e- QEDp<=5 @1 
-INFO: Creating files in directory P1_mumpp_vlchi1epem 
-INFO: Generating Feynman diagrams for Process: mu- pp > vm chi1 e+ e- QEDp<=5 @1 
-INFO: Finding symmetric diagrams for subprocess group mumpp_vlchi1epem 
-Generated helas calls for 1 subprocesses (1 diagrams) in 0.004 s
-Wrote files for 9 helas calls in 0.055 s
+INFO: Generating Helas calls for process: pp > e+ vm~ ve vm chi1 e+ e- QEDp<=5 @1 
+INFO: Processing color information for process: pp > e+ vm~ ve vm chi1 e+ e- QEDp<=5 @1 
+INFO: Creating files in directory P1_pp_epvlvlvlchi1epem 
+INFO: Generating Feynman diagrams for Process: pp > e+ vm~ ve vm chi1 e+ e- QEDp<=5 @1 
+INFO: Finding symmetric diagrams for subprocess group pp_epvlvlvlchi1epem 
+Generated helas calls for 1 subprocesses (2 diagrams) in 0.003 s
+Wrote files for 16 helas calls in 0.057 s
 [1;31mCRITICAL: aS not define as external parameter adding it! [0m
 [1;34mWARNING: [1;31m aEWM1 and Gf not define in MODEL. AQED will not be written correcty in LHE FILE [0m
 ALOHA: aloha starts to compute helicity amplitudes
-ALOHA: aloha creates 7 routines in  1.340 s
-save configuration file to /Users/matheushostert/Repos/Mu2eExotica/MGevents/MuonCaptureModel1/Cards/me5_configuration.txt
+ALOHA: aloha creates 8 routines in  0.954 s
+save configuration file to /Users/mhostert/Repos/Mu2eExotica/MGevents/ProtonDecayModel1/Cards/me5_configuration.txt
 INFO: Use Fortran compiler gfortran 
 INFO: Use c++ compiler clang 
 INFO: Generate jpeg diagrams 
 INFO: Generate web pages 
-Output to directory /Users/matheushostert/Repos/Mu2eExotica/MGevents/MuonCaptureModel1 done.
+Output to directory /Users/mhostert/Repos/Mu2eExotica/MGevents/ProtonDecayModel1 done.
 Type "launch" to generate events from this process, or see
-/Users/matheushostert/Repos/Mu2eExotica/MGevents/MuonCaptureModel1/README
+/Users/mhostert/Repos/Mu2eExotica/MGevents/ProtonDecayModel1/README
 Run "open index.html" to see more information about this process.
-launch -n custom_run_8.80e-01_1.03e+00_4.50e-02 /Users/matheushostert/Repos/Mu2eExotica/MGevents/MuonCaptureModel1
+launch -n custom_run_9.37e-01_1.02e+00_2.00e-02 /Users/mhostert/Repos/Mu2eExotica/MGevents/ProtonDecayModel1
 ************************************************************
 *                                                          *
 *                      W E L C O M E to                    *
@@ -98,7 +106,7 @@ launch -n custom_run_8.80e-01_1.03e+00_4.50e-02 /Users/matheushostert/Repos/Mu2e
 *                   *        * *        *                  *
 *                 *                       *                *
 *                                                          *
-*         VERSION 3.5.0                 2023-05-12         *
+*         VERSION 3.5.3                 2023-12-23         *
 *                                                          *
 *    The MadGraph5_aMC@NLO Development Team - Find us at   *
 *    https://server06.fynu.ucl.ac.be/projects/madgraph     *
@@ -106,11 +114,13 @@ launch -n custom_run_8.80e-01_1.03e+00_4.50e-02 /Users/matheushostert/Repos/Mu2e
 *               Type 'help' for in-line help.              *
 *                                                          *
 ************************************************************
-INFO: load configuration from /Users/matheushostert/Repos/Mu2eExotica/MGevents/MuonCaptureModel1/Cards/me5_configuration.txt  
-INFO: load configuration from /Users/matheushostert/Development/MG5_aMC_v3_5_0/input/mg5_configuration.txt  
-INFO: load configuration from /Users/matheushostert/Repos/Mu2eExotica/MGevents/MuonCaptureModel1/Cards/me5_configuration.txt  
+INFO: load configuration from /Users/mhostert/Repos/Mu2eExotica/MGevents/ProtonDecayModel1/Cards/me5_configuration.txt  
+INFO: load configuration from /Users/mhostert/Development/MG5_aMC_v3_5_3/input/mg5_configuration.txt  
+INFO: load configuration from /Users/mhostert/Repos/Mu2eExotica/MGevents/ProtonDecayModel1/Cards/me5_configuration.txt  
 Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
-generate_events custom_run_8.80e-01_1.03e+00_4.50e-02
+[1;34m                Note that since 2.3. The launch for 1>N pass in event generation
+                For efficient width computation see arXiv:1402.1178.[0m
+generate_events custom_run_9.37e-01_1.02e+00_2.00e-02
 set ptl -1
 [1mINFO: modify parameter ptl of the run_card.dat to -1.0 [0m
 set etal -1
@@ -119,23 +129,43 @@ set etalmin -1
 [1mINFO: modify parameter etalmin of the run_card.dat to -1.0 [0m
 set drll -1
 [1mINFO: modify parameter drll of the run_card.dat to -1.0 [0m
-set nevents 50000
-[1mINFO: modify parameter nevents of the run_card.dat to 50000 [0m
-set ebeam1 0.00001
-[1mINFO: modify parameter ebeam1 of the run_card.dat to 1e-05 [0m
-set ebeam2 0.00001
-[1mINFO: modify parameter ebeam2 of the run_card.dat to 1e-05 [0m
-set Mchi1 8.80e-01
-[1mINFO: modify param_card information BLOCK mass with id (999901,) set to 0.88 [0m
-set Mchi2 1.03e+00
-[1mINFO: modify param_card information BLOCK mass with id (999902,) set to 1.03 [0m
-set MAp 4.50e-02
-[1mINFO: modify param_card information BLOCK mass with id (999903,) set to 0.045 [0m
+set ebeam1 0
+[1mINFO: modify parameter ebeam1 of the run_card.dat to 0.0 [0m
+set ebeam2 0
+[1mINFO: modify parameter ebeam2 of the run_card.dat to 0.0 [0m
+set Mchi1 9.3669e-01
+[1mINFO: modify param_card information BLOCK mass with id (999901,) set to 0.93669 [0m
+set Mchi2 1.0200e+00
+[1mINFO: modify param_card information BLOCK mass with id (999902,) set to 1.02 [0m
+set MAp 2.0000e-02
+[1mINFO: modify param_card information BLOCK mass with id (999903,) set to 0.02 [0m
+set lambda 1
+[1mINFO: modify param_card information BLOCK bsminputs with id (2,) set to 1.0 [0m
+set tcon 1
+[1mINFO: modify param_card information BLOCK bsminputs with id (9,) set to 1.0 [0m
+set epsilon 1.0000e-04
+[1mINFO: modify param_card information BLOCK bsminputs with id (1,) set to 0.0001 [0m
+set Wap 4.8649e-13
+[1mINFO: modify param_card information BLOCK decay with id (999903,) set to 4.8649e-13 [0m
+set Wchi2 1.2740e-01
+[1mINFO: modify param_card information BLOCK decay with id (999902,) set to 0.1274 [0m
+set decay 13 3.000000e-19
+[1;34mWARNING: Note that this parameter seems to be ignore by MG.
+MG will use instead the expression: : 0.0
+You need to match this expression for external program (such pythia). [0m
+[1mINFO: modify param_card information BLOCK decay with id (13,) set to 3e-19 [0m
 set nevents 10000"
 [1mINFO: modify parameter nevents of the run_card.dat to 10000 [0m
+[1;34mWARNING: Particle 999903 with small width detected (4.8649e-13): See https://answers.launchpad.net/mg5amcnlo/+faq/3053 to learn the special handling of that case [0m
+[1;34mWARNING: Particle 13 with small width detected (3e-19): See https://answers.launchpad.net/mg5amcnlo/+faq/3053 to learn the special handling of that case [0m
+[1mINFO: Remember that Parton-Shower are not yet ready for such proton component definition (HW implementation in progress). [0m
 INFO: Update the dependent parameter of the param_card.dat 
-Generating 10000 events with run name custom_run_8.80e-01_1.03e+00_4.50e-02
-survey  custom_run_8.80e-01_1.03e+00_4.50e-02 
+[1;34mAt-rest proton mode set: energy beam set to 0.938[0m
+[1;34mAt-rest proton mode set: energy beam set to 0.938[0m
+Generating 10000 events with run name custom_run_9.37e-01_1.02e+00_2.00e-02
+survey  custom_run_9.37e-01_1.02e+00_2.00e-02 
+[1;34mAt-rest proton mode set: energy beam set to 0.938[0m
+[1;34mAt-rest proton mode set: energy beam set to 0.938[0m
 INFO: compile directory 
 compile Source Directory
 Using random number seed offset = 21
@@ -143,46 +173,43 @@ INFO: Running Survey
 Creating Jobs
 Working on SubProcesses
 INFO: Compiling for process 1/1. 
-INFO:     P1_mumpp_vlchi1epem  
+INFO:     P1_pp_epvlvlvlchi1epem  
 [1;34mWARNING: The optimizer detects that you have coupling evaluated to zero: 
 GC_5 GC_6 GC_8 GC_9 GC_11
 This will slow down the computation. Please consider using restricted model:
 https://answers.launchpad.net/mg5amcnlo/+faq/2312 [0m
-INFO:     P1_mumpp_vlchi1epem  
-INFO:  Idle: 1,  Running: 0,  Completed: 0 [ current time: 20h20 ] 
-INFO:  Idle: 0,  Running: 0,  Completed: 1 [  0.48s  ] 
-INFO:  Idle: 0,  Running: 0,  Completed: 1 [  0.48s  ] 
+INFO:     P1_pp_epvlvlvlchi1epem  
+INFO:  Idle: 1,  Running: 0,  Completed: 0 [ current time: 12h41 ] 
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+INFO:  Idle: 0,  Running: 0,  Completed: 1 [  9s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 1 [  9s  ] 
+sum of cpu time of last step: 9 seconds
+  === Results Summary for run: custom_run_9.37e-01_1.02e+00_2.00e-02 tag: tag_1 ===
+
+     Width :   0 +- 0 GeV
+     Nb of events :  0
+ 
 INFO: End survey 
 refine 10000
 Creating Jobs
 INFO: Refine results to 10000 
 INFO: Generating 10000.0 unweighted events. 
-sum of cpu time of last step: 0 second
-INFO: Effective Luminosity 0.0038808576695449695 pb^-1 
-INFO: need to improve 1 channels 
-- Current estimate of cross-section: 3092100.0 +- 87046.0
-    P1_mumpp_vlchi1epem 
-INFO:  Idle: 4,  Running: 8,  Completed: 0 [ current time: 20h20 ] 
-INFO:  Idle: 0,  Running: 0,  Completed: 12 [  2.8s  ] 
-INFO: Combining runs 
-sum of cpu time of last step: 16 seconds
-INFO: finish refine 
-refine 10000 --treshold=0.9
-No need for second refine due to stability of cross-section
-INFO: Combining Events 
-  === Results Summary for run: custom_run_8.80e-01_1.03e+00_4.50e-02 tag: tag_1 ===
-
-     Cross-section :   3.174e+06 +- 1.625e+04 pb
-     Nb of events :  10000
- 
-store_events
-INFO: Storing parton level results 
-INFO: End Parton 
-reweight -from_cards
-decay_events -from_cards
-INFO: storing files of previous run 
-INFO: Done 
+sum of cpu time of last step: 9 seconds
+INFO: Effective Luminosity 1.2e+103 pb^-1 
+INFO: need to improve 0 channels 
+[1;31mSurvey return zero cross section. 
+   Typical reasons are the following:
+   1) A massive s-channel particle has a width set to zero.
+   2) The pdf are zero for at least one of the initial state particles
+      or you are using maxjetflavor=4 for initial state b:s.
+   3) The cuts are too strong.
+   Please check/correct your param_card and/or your run_card.[0m
+[1;34mZero result detected: See https://cp3.irmp.ucl.ac.be/projects/madgraph/wiki/FAQ-General-14[0m
+[1;34mAt-rest proton mode set: energy beam set to 0.938[0m
+[1;34mAt-rest proton mode set: energy beam set to 0.938[0m
+INFO:  
 quit
 INFO:  
-more information in /Users/matheushostert/Repos/Mu2eExotica/MGevents/MuonCaptureModel1/index.html
+more information in /Users/mhostert/Repos/Mu2eExotica/MGevents/ProtonDecayModel1/index.html
 quit

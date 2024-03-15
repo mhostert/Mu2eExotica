@@ -2,7 +2,7 @@ pdlabel1=
 pdlabel2=
 lhapdf=
 PYTHIA8_PATH=NotInstalled
-MG5AMC_VERSION=3.5.0
+MG5AMC_VERSION=3.5.3
 GLOBAL_FLAG=-O
 ALOHA_FLAG=
 MATRIX_FLAG=
@@ -10,8 +10,8 @@ DEFAULT_CPP_COMPILER=clang
 MACFLAG=-mmacosx-version-min=10.8
 STDLIB=-lc++
 STDLIB_FLAG=-stdlib=libc++
+DEFAULT_F2PY_COMPILER=f2py
 DEFAULT_F_COMPILER=gfortran
-DEFAULT_F2PY_COMPILER=f2py3.9
 #end_of_make_opts_variables
 
 BIASLIBDIR=../../../lib/
